@@ -39,32 +39,55 @@ function init() {
 init()
 
 
-gsap.to("#page1 #img",{
-  width:"100%",
-  scrollTrigger:{
-    trigger:"#page1",
-    scroller:"#main",
+gsap.to("#page1 #img", {
+  width: "100%",
+  scrollTrigger: {
+    trigger: "#page1",
+    scroller: "#main",
     // markers:true,
-    start:"top 10%",
-    end:"top -40%",
-    scrub:true,
-    pin:true
+    start: "top 10%",
+    end: "top -40%",
+    scrub: true,
+    pin: true
   }
 })
 
+gsap.from("#page2 h1", {
+  rotate: 5,
+  y: 100,
+  opacity: 0,
+  stagger: 1,
+  scrollTrigger: {
+    trigger: "#page2 h1",
+    scroller: "#main",
+    markers: true,
+    start: "top 60%",
+    end: "top 40%",
+    scrub: 3
+  }
+})
 
-gsap.from("#page2 h1",{
-  opacity:0,
-  rotate:5,
-  y:100,
-  stagger:0.5,
+gsap.from("#page3 h1",{
+  scale:2,
   scrollTrigger:{
-    trigger:"#page2 h1",
+    trigger:"#page3",
     scroller:"#main",
-    markers:true,
-    start:"top 55%",
-    end:"top 35%",
-    scrub:4
-
+    start:"top 0%",
+    end:"top -20%",
+    scrub:2,
+    pin:true,
+    markers:true
+  }
+})
+gsap.from("#page3 h2",{
+  scale:2,
+  scrollTrigger:{
+    trigger:"#page3",
+    scroller:"#main",
+    start:"top 0%",
+    end:"top -20%",
+    scrub:2,
+    pin:true,
+    markers:true
   }
 })

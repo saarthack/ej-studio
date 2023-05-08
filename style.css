@@ -147,6 +147,22 @@ body {
     /* background-color: red; */
     overflow: hidden;
 }
-#page3 h1 span {
-    font-family: Ivy;
+
+#page3{
+    min-height: 100vh;
+    width: 100%;
+    background-color: #fff;
+}
+#page3 h1{
+    color: #050505;
+    font-size: 20vw;
+    text-align: center;
+    text-transform: uppercase;
+}
+#page3 h2{
+    color: #050505;
+    text-align: center;
+    font-size: 30vw;
+    text-transform: uppercase;
+    font-family: ivy;
 }
