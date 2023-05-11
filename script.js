@@ -67,27 +67,53 @@ gsap.from("#page2 h1", {
   }
 })
 
-gsap.from("#page3 h1",{
-  scale:2,
-  scrollTrigger:{
-    trigger:"#page3",
-    scroller:"#main",
-    start:"top 0%",
-    end:"top -20%",
-    scrub:2,
-    pin:true,
-    markers:true
+gsap.from("#page3 h1", {
+  scale: 2,
+  scrollTrigger: {
+    trigger: "#page3",
+    scroller: "#main",
+    start: "top 0%",
+    end: "top -20%",
+    scrub: 2,
+    pin: true,
+    markers: true
   }
 })
-gsap.from("#page3 h2",{
-  scale:2,
-  scrollTrigger:{
-    trigger:"#page3",
-    scroller:"#main",
-    start:"top 0%",
-    end:"top -20%",
-    scrub:2,
-    pin:true,
-    markers:true
+gsap.from("#page3 h2", {
+  scale: 2,
+  scrollTrigger: {
+    trigger: "#page3",
+    scroller: "#main",
+    start: "top 0%",
+    end: "top -20%",
+    scrub: 2,
+    pin: true,
+    markers: true
   }
+})
+
+
+document.addEventListener("mousemove", function (dets) {
+  document.querySelector("#cursor").style.left = `${dets.x}px`
+  document.querySelector("#cursor").style.top = `${dets.y}px`
+  console.log("ehyegfe")
+})
+
+
+var flag = 0
+document.querySelector("#menu").addEventListener("click", function () {
+  if(flag == 0){
+    document.querySelector("#menu").style.height = "24px"
+    document.querySelector("#line1").style.rotate = "47deg"
+    document.querySelector("#line2").style.rotate = "-48deg"
+    document.querySelector("#full-scr").style.top = 0
+    flag = 1
+  }else{
+    document.querySelector("#menu").style.height = "12px"
+    document.querySelector("#line1").style.rotate = "0deg"
+    document.querySelector("#line2").style.rotate = "0deg"
+    document.querySelector("#full-scr").style.top = "-100%"
+    flag = 0
+  }
+ 
 })

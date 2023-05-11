@@ -23,7 +23,15 @@ body {
     position: relative;
     /* background-color: red; */
 }
-
+#cursor{
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    border: 1px solid #e1e1e1;
+    position: absolute;
+    z-index: 9999;
+    transition: all linear 0.1s;
+}
 #bg {
     min-height: 100vh;
     width: 100%;
@@ -42,7 +50,7 @@ body {
     position: fixed;
     top: 50px;
     z-index: 9999;
-
+    mix-blend-mode: difference;
 }
 
 #nav h5 {
@@ -57,18 +65,62 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    cursor: pointer;
 }
 
 #line1 {
     height: 2px;
     width: 100%;
     background-color: #fff;
+    transform-origin: 0 0;
+    transition: all linear 0.4s;
 }
 
 #line2 {
     height: 2px;
     width: 100%;
     background-color: #fff;
+    transition: all linear 0.4s;
+    transform-origin: 0 0;
+
+}
+
+#full-scr{
+    height: 100vh;
+    width: 100%;
+    background-color: #050505;
+    position: absolute;
+    top: -100%;
+    transition: all ease-out 0.5s;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+#full-scr h1{
+    font-size: 10.5vw;
+    text-transform: uppercase;
+    color: #fff;
+    font-family: Ivy;
+    /* background-color: red; */
+    line-height: 12vw;
+    font-weight: 100;
+    position: relative;
+}
+#full-scr h1::after{
+    content: "";
+    position: absolute;
+    height: 2px;
+    bottom: 0;
+    background-color: #f5f5f5;
+    left: 0;
+    width: 0;
+    transition: all ease-out 0.5s;
+}
+#full-scr h1:hover::after{
+    width: 100%;
 }
 
 #bg p {
@@ -89,6 +141,7 @@ body {
     text-transform: uppercase;
     text-align: center;
 }
+
 
 #bg>h2 {
     font-size: 19.5vw;
