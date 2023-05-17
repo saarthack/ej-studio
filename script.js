@@ -102,18 +102,55 @@ document.addEventListener("mousemove", function (dets) {
 
 var flag = 0
 document.querySelector("#menu").addEventListener("click", function () {
-  if(flag == 0){
+  if (flag == 0) {
     document.querySelector("#menu").style.height = "24px"
     document.querySelector("#line1").style.rotate = "47deg"
     document.querySelector("#line2").style.rotate = "-48deg"
     document.querySelector("#full-scr").style.top = 0
     flag = 1
-  }else{
+  } else {
     document.querySelector("#menu").style.height = "12px"
     document.querySelector("#line1").style.rotate = "0deg"
     document.querySelector("#line2").style.rotate = "0deg"
     document.querySelector("#full-scr").style.top = "-100%"
     flag = 0
   }
- 
+
 })
+
+
+
+var loader = gsap.timeline()
+
+loader.to("#kuch-bhi h5", {
+    y: -76,
+    delay: 0.5,
+    duration: 1.7,
+  })
+  .to("#text-anime", {
+    y: -50,
+    rotateX: -90,
+    duration: 0.8,
+    opacity: 0
+  })
+  .to("#loader1", {
+    height: 0,
+    duration: 0.8,
+    delay: 0.5
+  })
+  .to("#loader2", {
+    height: 0,
+    duration: 0.8,
+  }, "-=0.3")
+  .to("#loader3", {
+    height: 0,
+    duration: 0.8,
+  }, "-=1")
+  .to("#loader4", {
+    height: 0,
+    duration: 0.8,
+  }, "-=0.7")
+  .to("#loader", {
+    top: "-100vh",
+    duration: 0.1
+  })
