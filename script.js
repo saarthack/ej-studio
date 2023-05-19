@@ -67,36 +67,10 @@ gsap.from("#page2 h1", {
   }
 })
 
-gsap.from("#page3 h1", {
-  scale: 2,
-  scrollTrigger: {
-    trigger: "#page3",
-    scroller: "#main",
-    start: "top 0%",
-    end: "top -20%",
-    scrub: 2,
-    pin: true,
-    markers: true
-  }
-})
-gsap.from("#page3 h2", {
-  scale: 2,
-  scrollTrigger: {
-    trigger: "#page3",
-    scroller: "#main",
-    start: "top 0%",
-    end: "top -20%",
-    scrub: 2,
-    pin: true,
-    markers: true
-  }
-})
-
 
 document.addEventListener("mousemove", function (dets) {
   document.querySelector("#cursor").style.left = `${dets.x}px`
   document.querySelector("#cursor").style.top = `${dets.y}px`
-  console.log("ehyegfe")
 })
 
 
@@ -154,3 +128,30 @@ loader.to("#kuch-bhi h5", {
     top: "-100vh",
     duration: 0.1
   })
+
+
+
+var page3TL = gsap.timeline({
+  scrollTrigger: {
+    trigger: "#page3",
+    scroller: "#main",
+    scrub: 2,
+    markers: true,
+    start: "top 0",
+    end: "top -100%",
+    pin: true
+  }
+})
+
+
+page3TL.from("#page3 h1", {
+  scale: 1.95,
+  lineHeight: "30vw"
+}, "anim")
+page3TL.from("#page3 h2", {
+  scale: 1.8,
+  lineHeight: "43vw"
+}, "anim")
+page3TL.to("#page4", {
+  y: "-180vh"
+}, "anim")
