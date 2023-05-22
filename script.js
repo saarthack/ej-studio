@@ -1,3 +1,4 @@
+
 function init() {
   gsap.registerPlugin(ScrollTrigger);
 
@@ -69,8 +70,8 @@ gsap.from("#page2 h1", {
 
 
 document.addEventListener("mousemove", function (dets) {
-  document.querySelector("#cursor").style.left = `${dets.x}px`
-  document.querySelector("#cursor").style.top = `${dets.y}px`
+  document.querySelector("#cursor").style.left = `${dets.x + 28}px`
+  document.querySelector("#cursor").style.top = `${dets.y + 20}px`
 })
 
 
@@ -155,3 +156,26 @@ page3TL.from("#page3 h2", {
 page3TL.to("#page4", {
   y: "-180vh"
 }, "anim")
+
+
+
+
+
+
+var all = document.querySelectorAll(".box")
+all.forEach(function(e){
+
+  e.addEventListener("mouseenter",function(){
+    document.querySelector("#cursor").innerHTML = "More"
+    document.querySelector("#cursor").style.scale = 3.5
+    document.querySelector("#cursor").style.backgroundColor = "#fff"
+    document.querySelector("#cursor").style.borderColor = "#fff"
+  })
+  e.addEventListener("mouseleave",function(){
+    document.querySelector("#cursor").innerHTML = ""
+    document.querySelector("#cursor").style.scale = 1
+    document.querySelector("#cursor").style.backgroundColor = "transparent"
+    document.querySelector("#cursor").style.borderColor = "#e1e1e1"
+  })
+  
+})
