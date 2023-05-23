@@ -70,7 +70,7 @@ gsap.from("#page2 h1", {
 
 
 document.addEventListener("mousemove", function (dets) {
-  document.querySelector("#cursor").style.left = `${dets.x + 28}px`
+  document.querySelector("#cursor").style.left = `${dets.x + 38}px`
   document.querySelector("#cursor").style.top = `${dets.y + 20}px`
 })
 
@@ -178,4 +178,36 @@ all.forEach(function(e){
     document.querySelector("#cursor").style.borderColor = "#e1e1e1"
   })
   
+})
+
+var page5TL = gsap.timeline({
+  scrollTrigger:{
+    trigger:"#page5",
+    scroller:"#main",
+    markers:true,
+    scrub:2,
+    pin:true
+  }
+})
+page5TL.to("#page5 h1",{
+  scale:4,
+  filter:"blur(20px)",
+  opacity:0,
+})
+page5TL.to("#page5 #para",{
+  opacity:1,
+})
+
+
+
+gsap.from("#box1 img",{
+  height:"200%",
+  scrollTrigger:{
+    trigger:"#page4",
+    scroller:"#main",
+    markers:true,
+    start:"top 160%",
+    end:"top 159%",
+    scrub:2
+  }
 })
